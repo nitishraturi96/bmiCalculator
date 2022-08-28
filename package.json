@@ -4,7 +4,7 @@
   "description": "This app calculates bmi and perform related operations",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node lib/server.js",
     "test": "mocha --exit"
   },
   "repository": {
