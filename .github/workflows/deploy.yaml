@@ -2,7 +2,7 @@ name: Deploy to Heroku
 
 on:
   push: 
-    branches: [ main ]
+    branches: [ release ]
 
 jobs:
   build:
@@ -10,16 +10,21 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Login to Heroku
-      env:
+      env: 
         HEROKU_API_KEY: bb5efc1f-b06a-4407-8e9e-b14feb2c4be0
       run: heroku container:login
 
+    - name: Create Heroku
+      env: 
+        HEROKU_API_KEY: bb5efc1f-b06a-4407-8e9e-b14feb2c4be0
+      run: heroku create
+  
     - name: Push to Heroku
       env:
         HEROKU_API_KEY: bb5efc1f-b06a-4407-8e9e-b14feb2c4be0
-      run: heroku container:push -a calculate-bmi-application web 
+      run: heroku container:push web
 
     - name: Release
       env:
         HEROKU_API_KEY: bb5efc1f-b06a-4407-8e9e-b14feb2c4be0
-      run: heroku container:release -a calculate-bmi-application web
+      run: heroku container:release web
