@@ -12,7 +12,7 @@ jobs:
     - name: Login to Heroku
       env: 
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku container:login 
+      run: echo $HEROKU_API_KEY
 
     - name: Push to Heroku
       env:
