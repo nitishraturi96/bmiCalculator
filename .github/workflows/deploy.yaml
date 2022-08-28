@@ -2,10 +2,10 @@ name: Deploy to Heroku
 
 on:
   push: 
-    branches: [ main ]
+    branches: [ release ]
 
 jobs:
-  build:
+  deployment:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
