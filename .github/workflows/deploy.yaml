@@ -11,15 +11,15 @@ jobs:
     - uses: actions/checkout@v1
     - name: Login to Heroku
       env: 
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku container:login 
+        HEROKU_API_KEY: bb5efc1f-b06a-4407-8e9e-b14feb2c4be0
+      run: heroku container:login
 
     - name: Push to Heroku
       env:
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        HEROKU_API_KEY: bb5efc1f-b06a-4407-8e9e-b14feb2c4be0
       run: heroku container:push -a calculate-bmi-application web 
 
     - name: Release
       env:
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        HEROKU_API_KEY: bb5efc1f-b06a-4407-8e9e-b14feb2c4be0
       run: heroku container:release -a calculate-bmi-application web
