@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Login to Heroku
-      env: 
+      env:
         HEROKU_API_KEY: bb5efc1f-b06a-4407-8e9e-b14feb2c4be0
       run: heroku container:login
 
